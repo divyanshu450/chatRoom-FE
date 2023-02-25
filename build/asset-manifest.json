@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/batiyawo/static/css/main.7585287f.chunk.css",
-    "main.js": "/batiyawo/static/js/main.1ca7cfba.chunk.js",
-    "main.js.map": "/batiyawo/static/js/main.1ca7cfba.chunk.js.map",
-    "runtime-main.js": "/batiyawo/static/js/runtime-main.3ebbeccd.js",
-    "runtime-main.js.map": "/batiyawo/static/js/runtime-main.3ebbeccd.js.map",
-    "static/js/2.89046cc3.chunk.js": "/batiyawo/static/js/2.89046cc3.chunk.js",
-    "static/js/2.89046cc3.chunk.js.map": "/batiyawo/static/js/2.89046cc3.chunk.js.map",
+    "main.js": "/batiyawo/static/js/main.e121742b.chunk.js",
+    "main.js.map": "/batiyawo/static/js/main.e121742b.chunk.js.map",
+    "runtime-main.js": "/batiyawo/static/js/runtime-main.d73260ce.js",
+    "runtime-main.js.map": "/batiyawo/static/js/runtime-main.d73260ce.js.map",
+    "static/js/2.a9460dae.chunk.js": "/batiyawo/static/js/2.a9460dae.chunk.js",
+    "static/js/2.a9460dae.chunk.js.map": "/batiyawo/static/js/2.a9460dae.chunk.js.map",
     "index.html": "/batiyawo/index.html",
     "static/css/main.7585287f.chunk.css.map": "/batiyawo/static/css/main.7585287f.chunk.css.map",
-    "static/js/2.89046cc3.chunk.js.LICENSE.txt": "/batiyawo/static/js/2.89046cc3.chunk.js.LICENSE.txt"
+    "static/js/2.a9460dae.chunk.js.LICENSE.txt": "/batiyawo/static/js/2.a9460dae.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.3ebbeccd.js",
-    "static/js/2.89046cc3.chunk.js",
+    "static/js/runtime-main.d73260ce.js",
+    "static/js/2.a9460dae.chunk.js",
     "static/css/main.7585287f.chunk.css",
-    "static/js/main.1ca7cfba.chunk.js"
+    "static/js/main.e121742b.chunk.js"
   ]
 }
