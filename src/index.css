@@ -16,7 +16,7 @@ html {
   font-family: 'Hind Siliguri', sans-serif;
 }
 body{
-  background-color: rgb(142, 248, 222);
+  background-image: linear-gradient(145deg,var(--shade3),var(--shade2));
 }
 
 /* Container is the parent of all the element of the web page after body */

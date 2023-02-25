@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import Message from "./Message";
 import moment from "moment";
 import ReactScrollableFeed from "react-scrollable-feed";
-import io from 'socket.io-client';
+import io from "socket.io-client";
 
-var audio = new Audio('./assets/ting.mp3')
+import Loader from "./components/loader/Loader";
+
+var audio = new Audio("./assets/ting.mp3");
 
 const socket = io("https://chatserver-9t43.onrender.com");
 
@@ -25,7 +27,9 @@ const Chat = () => {
     } else if (Notification.permission !== "denied") {
       Notification.requestPermission().then((permission) => {
         if (permission === "granted") {
-          const notification = new Notification(`${data.name} : ${data.message}`);
+          const notification = new Notification(
+            `${data.name} : ${data.message}`
+          );
         }
       });
     }
@@ -42,7 +46,7 @@ const Chat = () => {
       setstate((old) => {
         return [...old, msgObj];
       });
-      socket.emit("send", oldData)
+      socket.emit("send", oldData);
     }
     setData("");
   };
@@ -52,18 +56,18 @@ const Chat = () => {
   };
 
   useEffect(() => {
-    socket.on('connect', () => {
+    socket.on("connect", () => {
       setIsConnected(true);
     });
 
-    socket.on('disconnect', () => {
+    socket.on("disconnect", () => {
       setIsConnected(false);
     });
 
     const name = prompt("Enter your name to join");
     socket.emit("new-user-joined", name);
 
-    socket.on("user-joined", name => {
+    socket.on("user-joined", (name) => {
       let msgObj = {
         message: `${name} Joined the chat`,
         createdAt: moment().format(),
@@ -74,8 +78,8 @@ const Chat = () => {
         return [...old, msgObj];
       });
     });
-    socket.on("receive", data => {
-      audio.play()
+    socket.on("receive", (data) => {
+      audio.play();
       let msgObj = {
         message: `${data.name} : ${data.message}`,
         createdAt: moment().format(),
@@ -85,9 +89,9 @@ const Chat = () => {
       setstate((old) => {
         return [...old, msgObj];
       });
-      notifyMe(data)
+      notifyMe(data);
     });
-    socket.on("left", name => {
+    socket.on("left", (name) => {
       let msgObj = {
         message: `${name} left the chat`,
         createdAt: moment().format(),
@@ -100,14 +104,15 @@ const Chat = () => {
     });
 
     return () => {
-      socket.off('connect');
-      socket.off('disconnect');
-      socket.off('pong');
+      socket.off("connect");
+      socket.off("disconnect");
+      socket.off("pong");
     };
   }, []);
 
   return (
     <>
+      {!isConnected && <Loader />}
       <div className="container">
         <div className="profile">
           <img
